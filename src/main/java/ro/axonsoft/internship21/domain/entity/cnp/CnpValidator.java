@@ -9,7 +9,6 @@ public interface CnpValidator {
      *
      * @param cnp
      *            CNP-ul de validat
-     * @return partile componente ale CNP-ului
      * @throws CnpException
      *             daca CNP-ul nu este valid
      */

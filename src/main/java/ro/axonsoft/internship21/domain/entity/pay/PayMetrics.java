@@ -1,5 +1,7 @@
 package ro.axonsoft.internship21.domain.entity.pay;
 
+import ro.axonsoft.internship21.domain.entity.cnp.CnpParts;
+
 import java.math.BigDecimal;
 import java.util.Set;
 
@@ -38,4 +40,14 @@ public interface PayMetrics {
      * Erorile de procesare.
      */
     Set<PayError> errors();
+
+    /**
+     * Adds a payment to the list of payments
+     */
+    void addPayment(CnpParts cnp, Double value);
+
+    /**
+     * Adds an error to the list of errors
+     */
+    void addError(int lineIndex, int errorType);
 }

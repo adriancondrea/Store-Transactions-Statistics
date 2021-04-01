@@ -1,8 +1,14 @@
 package ro.axonsoft.internship21.domain.entity.cnp;
 
-public class CalDateImpl implements CalDate{
+public class CalDateImpl implements CalDate {
     private final Short year;
     private final Byte month, day;
+
+    public CalDateImpl(String stringDate) {
+        year = Short.parseShort(stringDate.substring(0, 4));
+        month = Byte.parseByte(stringDate.substring(4, 6));
+        day = Byte.parseByte(stringDate.substring(6));
+    }
 
     public CalDateImpl(Short year, Byte month, Byte day) {
         this.year = year;

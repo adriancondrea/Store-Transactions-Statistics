@@ -8,11 +8,24 @@ public class PayErrorImpl implements PayError{
         this.type = type;
     }
 
+    /**
+     *
+     * @return the line where the error occured
+     */
     @Override
     public Integer line() {
         return line;
     }
 
+    /**
+     *
+     * @return the type of the error:
+     * <ul>
+     * <li>0 line not valid</li>
+     * <li>1 CNP not valid</li>
+     * <li>2 transaction amount not valid</li>
+     * </ul>
+     */
     @Override
     public Integer type() {
         return type;

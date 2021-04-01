@@ -2,16 +2,16 @@ package ro.axonsoft.internship21.domain.entity.pay;
 
 public interface PayError {
     /**
-     * Numarul liniei la care s-a obtinut eroarea.
+     * The number of the line where the error occured.
      */
     Integer line();
 
     /**
-     * Tipul erorii:
+     * Type of the error:
      * <ul>
-     * <li>0 linie invalida</li>
-     * <li>1 pentru CNP invalid</li>
-     * <li>2 pentru suma plata invalida</li>
+     * <li>0 line not valid</li>
+     * <li>1 CNP not valid</li>
+     * <li>2 transaction amount not valid</li>
      * </ul>
      */
     Integer type();

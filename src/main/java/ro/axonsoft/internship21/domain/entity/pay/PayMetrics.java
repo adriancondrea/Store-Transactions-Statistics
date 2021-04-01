@@ -7,37 +7,37 @@ import java.util.Set;
 
 public interface PayMetrics {
     /**
-     * Numarul de cetateni straini care au efectuat plati.
+     * Number of foreign citizens that made transactions.
      */
     Integer foreigners();
 
     /**
-     * Numarul de plati efectuate de catre minori.
+     * Number of transactions made by minors.
      */
     Integer paymentsByMinors();
 
     /**
-     * Numarul de plati peste pragul de 5000RON.
+     * Number of transactions over 5000RON.
      */
     Integer bigPayments();
 
     /**
-     * Numarul de plati pana in 5000RON inclusiv.
+     * Number of transactions under or equal to 5000RON
      */
     Integer smallPayments();
 
     /**
-     * Media sumelor tuturor platilor. Valoarea are maxim doua zecimale.
+     * The average of all transaction. Value has at most 2 decimals.
      */
     BigDecimal averagePaymentAmount();
 
     /**
-     * Totalul platilor efectuate de cetatenii romani nascuti in Bucuresti.
+     * The total amount of transactions made by romanian citizens born in Bucharest
      */
     BigDecimal totalAmountCapitalCity();
 
     /**
-     * Erorile de procesare.
+     * Processing errors
      */
     Set<PayError> errors();
 

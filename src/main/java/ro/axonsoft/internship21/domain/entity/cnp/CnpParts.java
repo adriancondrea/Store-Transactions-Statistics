@@ -2,30 +2,29 @@ package ro.axonsoft.internship21.domain.entity.cnp;
 
 public interface CnpParts {
     /**
-     * Sexul determinat pe baza primei cifrei din CNP.
+     * @return the sex determined according to the first CNP digit
      */
     Sex sex();
 
     /**
-     * Posesorul CNP-ului este cetatean strain?
+     * Is the person identified by the CNP a foreign citizen?
      *
-     * @return {@code true} daca este cetatean strain, {@code false} in caz
-     *         contrar
+     * @return {@code true} if foreign, {@code false} otherwise
      */
     Boolean foreigner();
 
     /**
-     * Judetul.
+     * @return the county given by the CNP as a two-letter abbreviation (ex: BU - Bucharest, SV - Suceava)
      */
     Judet judet();
 
     /**
-     * Data nasterii.
+     * @return the birth date as {@code CalDate}
      */
     CalDate birthDate();
 
     /**
-     * Numarul de ordine.
+     * @return the orderNumber
      */
     Short orderNumber();
 }

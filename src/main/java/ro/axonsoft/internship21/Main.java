@@ -1,5 +1,6 @@
 package ro.axonsoft.internship21;
 
+import ro.axonsoft.internship21.domain.CnpException;
 import ro.axonsoft.internship21.domain.entity.cnp.CnpValidatorImpl;
 import ro.axonsoft.internship21.domain.entity.cnp.Judet;
 import ro.axonsoft.internship21.domain.entity.pay.PayMetrics;
@@ -16,6 +17,11 @@ public class Main {
         InputStream sourceStream = new FileInputStream(initialFile);
         File finalFile = new File("test.out");
         OutputStream targetStream = new FileOutputStream(finalFile, false);
-        payMetricsProcessor.process(sourceStream, targetStream);
+        try {
+            payMetricsProcessor.process(sourceStream, targetStream);
+        }
+        catch(IOException e){
+            throw new CnpException("I/O exception occured!");
+        }
     }
 }

@@ -6,13 +6,13 @@ import java.io.OutputStream;
 
 public interface PayMetricsProcessor {
     /**
-     * Proceseaza platile din {@code paymentsInputStream} si scrie metricele in
-     * {@code metricsOutputStream}
+     * Processes the transactions from (@code paymentsInputStream} and
+     * writes the statistics in {@code metricsOutputStream}
      *
-     * @param paymentsInputStream input stream al fisierului csv conținând plățile
-     * @param metricsOutputStream output stream al fișierului in care se serializeaza
-     *                            obiectul conținând metricile și erorile
-     * @throws IOException daca apare o eroare de I/O.
+     * @param paymentsInputStream input stream of the csv file containing the transactions
+     * @param metricsOutputStream output stream of the file where the object containing the statistics and errors is
+     *                            written
+     * @throws IOException if any I/O error appears
      */
     void process(InputStream paymentsInputStream, OutputStream metricsOutputStream) throws IOException;
 }

@@ -56,7 +56,7 @@ public class PayMetricsImpl implements PayMetrics, java.io.Serializable{
                 .map(AbstractMap.SimpleEntry::getValue)
                 .reduce(0d, Double::sum));
         try {
-            return transactionsAmount.divide(numberOfTransactions, RoundingMode.DOWN);
+            return transactionsAmount.divide(numberOfTransactions, RoundingMode.DOWN).setScale(2, RoundingMode.UP);
         }
         catch (ArithmeticException e){
             return BigDecimal.valueOf(0);
@@ -67,7 +67,7 @@ public class PayMetricsImpl implements PayMetrics, java.io.Serializable{
     public BigDecimal totalAmountCapitalCity() {
         return BigDecimal.valueOf(
                 payments.stream()
-                .filter(e -> e.getKey().judet() == Judet.BU)
+                .filter(e -> e.getKey().judet() == Judet.BU && !e.getKey().foreigner())
                 .map(AbstractMap.SimpleEntry::getValue)
                 .reduce(0d, Double::sum)
         );

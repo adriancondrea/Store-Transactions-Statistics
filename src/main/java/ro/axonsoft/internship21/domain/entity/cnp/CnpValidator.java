@@ -4,13 +4,12 @@ import ro.axonsoft.internship21.domain.CnpException;
 
 public interface CnpValidator {
     /**
-     * Valideza CNP-ul primit ca parametru si returneaza partile componente ale
-     * acestuia.
+     * Validates the CNP received as parameter and returns its component parts
      *
      * @param cnp
-     *            CNP-ul de validat
+     *            the CNP to validate
      * @throws CnpException
-     *             daca CNP-ul nu este valid
+     *             if the CNP is not valid
      */
     CnpParts validateCnp(String cnp) throws CnpException;
 

@@ -9,6 +9,6 @@ The marketing department of a company wants to extract a series of statistics fr
 - total sum of payments made by romanian citizens born in Bucharest
 - number of non-romanian citizens that efectuated payments
 
-The input data consists of:
+The input data consists of a csv file, entries separated by ;, each entry containing:
 - CNP (Social Security Number)
 - payment value
